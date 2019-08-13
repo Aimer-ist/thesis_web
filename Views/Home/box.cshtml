@@ -1,0 +1,83 @@
+﻿<script>
+    var timer = setInterval(callGaze, 500);
+
+    // 使用 Ajax 呼叫 Eyes/Start 做事
+    // 這邊使用 XHR 實作 Ajax。關於用 Jquery 實作 Ajax 的範例請見：https://ithelp.ithome.com.tw/articles/10197740
+    // 目標是呼叫 EyesController 的 Start() 並取得回傳值
+    function callstart() {
+        var xmlhttp;
+        // 傳 HTTP 呼叫的工具
+        xmlhttp = new XMLHttpRequest();
+
+        // 如果之後開啟連線並改變狀態的時候
+        xmlhttp.onreadystatechange = function () {
+            // 如果狀態回復是 OK （代碼 200 = 正常，其他例如 404 = 找不到）
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                // 把 return 的文字丟到 myDiv 去
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            }
+        }
+
+        // 設定工具開啟的目標 Eyes/Start （ = 貼上收件人）
+        xmlhttp.open("GET", "/Home/Start", true);
+
+        // 開始發送封包
+        xmlhttp.send();
+
+        // 開啟定時器
+        timer = setInterval(callGaze, 500);
+        setInterval(timer);
+    }
+
+    // 關閉眼動儀偵測
+    function callstop() {
+        var xmlhttp;
+        // 傳 HTTP 呼叫的工具
+        xmlhttp = new XMLHttpRequest();
+
+        // 當開啟並改變狀態的時候
+        xmlhttp.onreadystatechange = function () {
+            // 如果狀態回復是 OK （代碼 200 = 正常，其他例如 404 = 找不到）
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                // 把 return (從"/Home/Stop") 的文字丟到 myDiv 去
+                document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            }
+        }
+        // 設定工具開啟的目標 Eyes/Start （ = 貼上收件人）
+        xmlhttp.open("GET", "/Home/Stop", true);
+        // 發送封包
+        xmlhttp.send();
+
+        // 關閉定時器
+        clearInterval(timer);
+        document.getElementById("TobiiData").innerHTML = "";
+    }
+
+    // 取得眼動儀資料
+    function callGaze() {
+        var xmlhttp;
+        // 傳 HTTP 呼叫的工具
+        xmlhttp = new XMLHttpRequest();
+
+        // 當開啟並改變狀態的時候
+        xmlhttp.onreadystatechange = function () {
+            // 如果狀態回復是 OK （代碼 200 = 正常，其他例如 404 = 找不到）
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                // 把 return (從"/Home/GetGaze") 的文字丟到 TobiiData 去
+                if (document.getElementById("myDiv").innerText != "眼動儀已停止偵測")
+                    document.getElementById("TobiiData").innerHTML = xmlhttp.responseText;
+            }
+        }
+        // 設定工具開啟的目標 /Home/GetGaze （ = 貼上收件人）
+        xmlhttp.open("GET", "/Home/GetGaze", true);
+        // 發送封包
+        xmlhttp.send();
+    }
+</script>
+@* 按按鈕呼叫上面的方法 *@
+<button type="button" onclick="callstart()">啟動眼動儀</button>
+<button type="button" onclick="callstop()">關閉眼動儀</button>
+<a href="@Url.Action("Fuck", "Home")" class="btn btn-outline-info btn-lg btn-block" role="button" aria-pressed="true">開始</a>
+
+<a href="@Url.Action("Fuckkkk", "Home")" class="btn btn-outline-info btn-lg btn-block" role="button" aria-pressed="true">結束</a>
+@* 跳到空白頁也沒差｜要測試的時候用的 *@

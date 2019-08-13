@@ -1,0 +1,138 @@
+﻿
+@using System.Diagnostics;
+
+@{
+    ViewBag.Title = "Index";
+    int order = ViewBag.order;
+}
+<style>
+    body {
+        font-family: "Microsoft JhengHei";
+    }
+
+    .item {
+        background: #ffffff;
+        height: 850px;
+        width: 600px;
+        border: 1px solid #e4e4e4;
+        padding: 25px 25px 25px 25px;
+    }
+
+    .Title {
+        font-size: 30px;
+        font-weight: bold;
+        line-height:1.5em;
+        padding: 20px 10px ;
+        border-bottom: 1px solid #ff0000;
+        text-align: center;
+    }
+    .minTittle{
+        font-size: 20px;
+        color: #90949c;
+        padding: 30px 0 5px 0;     
+        font-weight: bold;
+    }
+    .text{
+        font-size: 18px;
+        line-height:1.5em;
+        color: #6c6c6c;
+        padding: 15px 15px 15px 35px;
+        
+    }
+    .me{
+        
+        font-size: 18px;
+        line-height:1.5em;
+        color: #90949c;
+        margin:80px 0 0 0;
+        padding: 15px;
+        text-align:center;
+    }
+    .start {
+        align-content:center;
+        background: #d7dadf;
+        border: 1.2px solid #c0c1c5;
+        border-radius: 50px;
+        margin: 40px 0px 0 170px ;
+        width:200px;
+        font-weight: bold;
+        color: #000;
+    }
+    .openMindWave {
+        position: absolute;
+        top: 80px;
+        right: 100px;
+        width: 150px;
+        background-color: rgb(255,193,7);
+        border: 1.2px solid #c0c1c5;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        color: #fff;
+    }
+    .openMindWaveOK {
+        position: absolute;
+        top: 80px;
+        right: 100px;
+        width: 150px;
+        background-color: rgb(108,117,125);
+        border: 1.2px solid #c0c1c5;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        color: #fff;
+    }
+    .QQ{
+        margin:0 0 0 40PX;
+    }
+
+</style>
+<div class="item rounded ">
+    <div class="">
+        <h1 class="Title">應用腦波訊號及眼動追蹤分析評估消費者於電子商店之購買意圖</h1>
+        <div class="col d-flex align-items-center "><img class="QQ" src="~/img/QQ.png"></div>
+        <!--
+        <h1 class="minTittle">研究目的：</h1>
+        <h1 class="text">驗證腦波訊號結合眼動追蹤行為的準確率是否高於單獨使用腦波儀或者單獨使用眼動儀的數據，暨未來應用於決策相關技術上。</h1>
+        <h1 class="minTittle">研究方式：</h1>
+        <h1 class="text">
+            &bull;&emsp;本實驗會請受測者戴上腦波訊號設備及啟用眼動追蹤設備。<br>
+            &bull;&emsp;網站以相同產品的手機，用兩種不同版面的呈現方式。<br />
+            &bull;&emsp;網站最少注視1分鐘以上。<br />
+            &bull;&emsp;請受測者對兩種版面各自評分。
+        </h1> -->
+
+        <a href="@Url.Action("Test", "Home")" class="btn btn-outline-info  start" role="button" aria-pressed="true">開始實驗</a>
+
+        <h1 class="me">
+            研究單位：國立屏東科技大學　資訊管理系 <br />
+            研究者姓名：王佩馨
+        </h1>
+    </div>
+    <button onclick="callstart();" id="btnOK" class=" btn btn-outline-secondary openMindWave " role="button" aria-pressed="true">開啟腦波儀器</button>
+
+    <script>
+        // 使用 Ajax 呼叫 Eyes/Start 做事
+        // 這邊使用 XHR 實作 Ajax。關於用 Jquery 實作 Ajax 的範例請見：https://ithelp.ithome.com.tw/articles/10197740
+        // 目標是呼叫 EyesController 的 Start() 並取得回傳值
+        function callstart() {
+            var xmlhttp;
+            // 傳 HTTP 呼叫的工具
+            xmlhttp = new XMLHttpRequest();
+
+            // 當開啟並改變狀態的時候
+            xmlhttp.onreadystatechange = function () {
+                // 如果狀態回復是 OK （代碼 200 = 正常，其他例如 404 = 找不到）
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    // OK.
+                    document.getElementById("btnOK").classList.remove("openMindWave");
+                    document.getElementById("btnOK").classList.add("openMindWaveOK");
+                }
+            }
+            // 設定工具開啟的目標 Eyes/ConnectOK （ = 貼上收件人）
+            xmlhttp.open("GET", "/Home/ConnectOK", true);
+            // 發送封包
+            xmlhttp.send();
+        }
+    </script>
+</div>

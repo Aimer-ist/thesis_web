@@ -1,0 +1,88 @@
+﻿@using System.Diagnostics;
+@{
+    ViewBag.Title = "Index";
+    string user = ViewBag.user;
+}
+<style>
+    body {
+        font-family: "Microsoft JhengHei";
+    }
+
+    .item {
+        background: #f2f2f2;
+        height: 580px;
+        width: 1200px;
+        border: 1px solid #e4e4e4;
+        padding: 25px 25px 25px 25px;
+    }
+
+    .end {
+        background-color: #fff;
+        margin: 150px 150px;
+        font-size: 36px;
+        text-align: center;
+        border: 1.2px solid #e4e4e4;
+        padding: 50px 20px;
+        border-radius: 8px;
+    }
+    .t {
+        font-size: 20px;
+        color: #6c6c6c;
+    }
+    .closeMindWave {
+        position: absolute;
+        top: 720px;
+        right: 880px;
+        width: 150px;
+        background-color: rgb(225,193,7);
+        border: 1.2px solid #c0c1c5;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        color: #fff;
+    }
+    .closeMindWaveEND {
+        position: absolute;
+        top: 720px;
+        right: 880px;
+        width: 150px;
+        background-color:rgb(108,117,125);
+        border: 1.2px solid #c0c1c5;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        color: #fff;
+    }
+</style>
+<div class="item rounded">
+    <div class=" end">
+        測試者<h1 class="t">編號：@user</h1>
+        實驗結束，感謝您的參與!
+    </div>
+    <button onclick="callend();" id="btnEND" class=" btn closeMindWave btn-outline-warning" role="button" aria-pressed="true">關閉腦波儀器</button>
+    <script>
+        // 使用 Ajax 呼叫 Eyes/Start 做事
+        // 這邊使用 XHR 實作 Ajax。關於用 Jquery 實作 Ajax 的範例請見：https://ithelp.ithome.com.tw/articles/10197740
+        // 目標是呼叫 EyesController 的 Start() 並取得回傳值
+        function callend() {
+            var xmlhttp;
+            // 傳 HTTP 呼叫的工具
+            xmlhttp = new XMLHttpRequest();
+
+            // 當開啟並改變狀態的時候
+            xmlhttp.onreadystatechange = function () {
+                // 如果狀態回復是 OK （代碼 200 = 正常，其他例如 404 = 找不到）
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    // OK.
+                    document.getElementById("btnEND").classList.remove("closeMindWave");
+                    document.getElementById("btnEND").classList.add("closeMindWaveEND");
+                }
+            }
+            // 設定工具開啟的目標 Eyes/ConnectOK （ = 貼上收件人）
+            xmlhttp.open("GET", "/Home/ConnectNG", true);
+            // 發送封包
+            xmlhttp.send();
+        }
+    </script>
+</div>
+

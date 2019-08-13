@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4BDBB8D-7448-4671-A1C3-F2AA7E739712}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EyeWeb_Again</RootNamespace>
+    <AssemblyName>EyeWeb_Again</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ThinkGearNET, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\ThinkGearNET.1.1.1\lib\ThinkGearNET.dll</HintPath>
+    </Reference>
+    <Reference Include="Tobii.Interaction.Model, Version=0.7.3.333, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tobii.Interaction.0.7.3\lib\net45\Tobii.Interaction.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Tobii.Interaction.Net, Version=0.7.3.333, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tobii.Interaction.0.7.3\lib\net45\Tobii.Interaction.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBconnPhone.cs" />
+    <Compile Include="Models\MyMindwave.cs" />
+    <Compile Include="Models\MyTobii.cs" />
+    <Compile Include="Models\Phone.cs" />
+    <Compile Include="Models\Special.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\10\0.png" />
+    <Content Include="img\10\1.png" />
+    <Content Include="img\10\2.png" />
+    <Content Include="img\10\3.png" />
+    <Content Include="img\10\4.png" />
+    <Content Include="img\10\5.png" />
+    <Content Include="img\10\6.png" />
+    <Content Include="img\10\7.png" />
+    <Content Include="img\10\8.png" />
+    <Content Include="img\10\9.png" />
+    <Content Include="img\11\0.png" />
+    <Content Include="img\11\1.png" />
+    <Content Include="img\11\2.png" />
+    <Content Include="img\11\3.png" />
+    <Content Include="img\11\4.png" />
+    <Content Include="img\11\5.png" />
+    <Content Include="img\11\6.png" />
+    <Content Include="img\11\7.png" />
+    <Content Include="img\11\8.png" />
+    <Content Include="img\11\9.png" />
+    <Content Include="img\12\0.png" />
+    <Content Include="img\12\1.png" />
+    <Content Include="img\12\2.png" />
+    <Content Include="img\12\3.png" />
+    <Content Include="img\12\4.png" />
+    <Content Include="img\12\5.png" />
+    <Content Include="img\12\6.png" />
+    <Content Include="img\12\7.png" />
+    <Content Include="img\12\8.png" />
+    <Content Include="img\12\9.png" />
+    <Content Include="img\13\0.png" />
+    <Content Include="img\13\1.png" />
+    <Content Include="img\13\2.png" />
+    <Content Include="img\13\3.png" />
+    <Content Include="img\13\4.png" />
+    <Content Include="img\13\5.png" />
+    <Content Include="img\13\6.png" />
+    <Content Include="img\13\7.png" />
+    <Content Include="img\13\8.png" />
+    <Content Include="img\13\9.png" />
+    <Content Include="img\14\0.png" />
+    <Content Include="img\14\1.png" />
+    <Content Include="img\14\2.png" />
+    <Content Include="img\14\3.png" />
+    <Content Include="img\14\4.png" />
+    <Content Include="img\14\5.png" />
+    <Content Include="img\14\6.png" />
+    <Content Include="img\14\7.png" />
+    <Content Include="img\14\8.png" />
+    <Content Include="img\14\9.png" />
+    <Content Include="img\15\0.png" />
+    <Content Include="img\15\1.png" />
+    <Content Include="img\15\2.png" />
+    <Content Include="img\15\3.png" />
+    <Content Include="img\15\4.png" />
+    <Content Include="img\15\5.png" />
+    <Content Include="img\15\6.png" />
+    <Content Include="img\15\7.png" />
+    <Content Include="img\15\8.png" />
+    <Content Include="img\15\9.png" />
+    <Content Include="img\16\0.png" />
+    <Content Include="img\16\1.png" />
+    <Content Include="img\16\2.png" />
+    <Content Include="img\16\3.png" />
+    <Content Include="img\16\4.png" />
+    <Content Include="img\16\5.png" />
+    <Content Include="img\16\6.png" />
+    <Content Include="img\16\7.png" />
+    <Content Include="img\16\8.png" />
+    <Content Include="img\16\9.png" />
+    <Content Include="img\17\0.png" />
+    <Content Include="img\17\1.png" />
+    <Content Include="img\17\2.png" />
+    <Content Include="img\17\3.png" />
+    <Content Include="img\17\4.png" />
+    <Content Include="img\17\5.png" />
+    <Content Include="img\17\6.png" />
+    <Content Include="img\17\7.png" />
+    <Content Include="img\17\8.png" />
+    <Content Include="img\17\9.png" />
+    <Content Include="img\18\0.png" />
+    <Content Include="img\18\1.png" />
+    <Content Include="img\18\2.png" />
+    <Content Include="img\18\3.png" />
+    <Content Include="img\18\4.png" />
+    <Content Include="img\18\5.png" />
+    <Content Include="img\18\6.png" />
+    <Content Include="img\18\7.png" />
+    <Content Include="img\18\8.png" />
+    <Content Include="img\18\9.png" />
+    <Content Include="img\19\0.png" />
+    <Content Include="img\19\1.png" />
+    <Content Include="img\19\2.png" />
+    <Content Include="img\19\3.png" />
+    <Content Include="img\19\4.png" />
+    <Content Include="img\19\5.png" />
+    <Content Include="img\19\6.png" />
+    <Content Include="img\19\7.png" />
+    <Content Include="img\19\8.png" />
+    <Content Include="img\19\9.png" />
+    <Content Include="img\1\0.png" />
+    <Content Include="img\1\1.png" />
+    <Content Include="img\1\2.png" />
+    <Content Include="img\1\3.png" />
+    <Content Include="img\1\4.png" />
+    <Content Include="img\1\5.png" />
+    <Content Include="img\1\6.png" />
+    <Content Include="img\1\7.png" />
+    <Content Include="img\1\8.png" />
+    <Content Include="img\1\9.png" />
+    <Content Include="img\20\0.png" />
+    <Content Include="img\20\1.png" />
+    <Content Include="img\20\2.png" />
+    <Content Include="img\20\3.png" />
+    <Content Include="img\20\4.png" />
+    <Content Include="img\20\5.png" />
+    <Content Include="img\20\6.png" />
+    <Content Include="img\20\7.png" />
+    <Content Include="img\20\8.png" />
+    <Content Include="img\20\9.png" />
+    <Content Include="img\2\0.png" />
+    <Content Include="img\2\1.png" />
+    <Content Include="img\2\2.png" />
+    <Content Include="img\2\3.png" />
+    <Content Include="img\2\4.png" />
+    <Content Include="img\2\5.png" />
+    <Content Include="img\2\6.png" />
+    <Content Include="img\2\7.png" />
+    <Content Include="img\2\8.png" />
+    <Content Include="img\2\9.png" />
+    <Content Include="img\3\0.png" />
+    <Content Include="img\3\1.png" />
+    <Content Include="img\3\2.png" />
+    <Content Include="img\3\3.png" />
+    <Content Include="img\3\4.png" />
+    <Content Include="img\3\5.png" />
+    <Content Include="img\3\6.png" />
+    <Content Include="img\3\7.png" />
+    <Content Include="img\3\8.png" />
+    <Content Include="img\3\9.png" />
+    <Content Include="img\4\0.png" />
+    <Content Include="img\4\1.png" />
+    <Content Include="img\4\2.png" />
+    <Content Include="img\4\3.png" />
+    <Content Include="img\4\4.png" />
+    <Content Include="img\4\5.png" />
+    <Content Include="img\4\6.png" />
+    <Content Include="img\4\7.png" />
+    <Content Include="img\4\8.png" />
+    <Content Include="img\4\9.png" />
+    <Content Include="img\5\0.png" />
+    <Content Include="img\5\1.png" />
+    <Content Include="img\5\2.png" />
+    <Content Include="img\5\3.png" />
+    <Content Include="img\5\4.png" />
+    <Content Include="img\5\5.png" />
+    <Content Include="img\5\6.png" />
+    <Content Include="img\5\7.png" />
+    <Content Include="img\5\8.png" />
+    <Content Include="img\5\9.png" />
+    <Content Include="img\6\0.png" />
+    <Content Include="img\6\1.png" />
+    <Content Include="img\6\2.png" />
+    <Content Include="img\6\3.png" />
+    <Content Include="img\6\4.png" />
+    <Content Include="img\6\5.png" />
+    <Content Include="img\6\6.png" />
+    <Content Include="img\6\7.png" />
+    <Content Include="img\6\8.png" />
+    <Content Include="img\6\9.png" />
+    <Content Include="img\7\0.png" />
+    <Content Include="img\7\1.png" />
+    <Content Include="img\7\2.png" />
+    <Content Include="img\7\3.png" />
+    <Content Include="img\7\4.png" />
+    <Content Include="img\7\5.png" />
+    <Content Include="img\7\6.png" />
+    <Content Include="img\7\7.png" />
+    <Content Include="img\7\8.png" />
+    <Content Include="img\7\9.png" />
+    <Content Include="img\8\0.png" />
+    <Content Include="img\8\1.png" />
+    <Content Include="img\8\2.png" />
+    <Content Include="img\8\3.png" />
+    <Content Include="img\8\4.png" />
+    <Content Include="img\8\5.png" />
+    <Content Include="img\8\6.png" />
+    <Content Include="img\8\7.png" />
+    <Content Include="img\8\8.png" />
+    <Content Include="img\8\9.png" />
+    <Content Include="img\9\0.png" />
+    <Content Include="img\9\1.png" />
+    <Content Include="img\9\2.png" />
+    <Content Include="img\9\3.png" />
+    <Content Include="img\9\4.png" />
+    <Content Include="img\9\5.png" />
+    <Content Include="img\9\6.png" />
+    <Content Include="img\9\7.png" />
+    <Content Include="img\9\8.png" />
+    <Content Include="img\9\9.png" />
+    <Content Include="img\QQ.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="ThinkGear.dll" />
+    <Content Include="ThinkGearNET_Extras\docs\copyright.txt" />
+    <Content Include="ThinkGearNET_Extras\docs\license.txt" />
+    <Content Include="ThinkGearNET_Extras\thinkgear.dll" />
+    <Content Include="ThinkGearNET_ReadMe.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\box.cshtml" />
+    <Content Include="Views\Home\Finish.cshtml" />
+    <Content Include="ThinkGearNET_Extras\samples.zip" />
+    <Content Include="ThinkGearNET_Extras\docs\NeuroSky_License_Agreement.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="mindData\" />
+    <Folder Include="tobiiData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54811</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54811/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets'))" />
+  </Target>
+  <Import Project="..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets" Condition="Exists('..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
